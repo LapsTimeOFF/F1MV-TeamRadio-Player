@@ -52,7 +52,14 @@ async function createWindow() {
       nodeIntegration: true,
       contextIsolation: false,
     },
+    width: 428, height: 195,
+    transparent: true,
+    alwaysOnTop: true,
   })
+
+  setInterval(() => {
+    console.log(win?.getBounds())
+  }, 1000)
 
   if (process.env.VITE_DEV_SERVER_URL) { // electron-vite-vue#298
     win.loadURL(url)
